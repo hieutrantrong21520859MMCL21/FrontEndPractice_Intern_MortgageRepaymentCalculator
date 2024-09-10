@@ -1,0 +1,353 @@
+:root {
+    --color_lime: hsl(61, 70%, 52%);
+    --color_red: hsl(4, 69%, 50%);
+    --color_white: hsl(0, 0%, 100%);
+    --color_slate_100: hsl(202, 86%, 94%);
+    --color_slate_300: hsl(203, 41%, 72%);
+    --color_slate_500: hsl(200, 26%, 54%);
+    --color_slate_700: hsl(200, 24%, 40%);
+    --color_slate_900: hsl(202, 55%, 16%);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+}
+
+body {
+}
+
+main {
+    margin: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+main header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+main header p.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color_slate_700);
+}
+
+main header p.clear {
+    text-decoration: underline;
+    font-weight: 500;
+    color: var(--color_slate_500);
+
+    cursor: pointer;
+}
+
+main section form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+main section form div {
+    display: flex;
+    flex-direction: column;
+}
+
+main section form div.amount input,
+main section form div.term input,
+main section form div.rate input,
+main section form div.type label {
+    outline: none;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 16px;
+
+    cursor: pointer;
+}
+
+main section form div.amount,
+main section form div.term,
+main section form div.rate {
+    position: relative;
+}
+
+main section form div.amount input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 53px;
+
+    font-weight: 700;
+    color: var(--color_slate_700);
+}
+
+main section form div.amount span::before {
+    content: '£';
+    font-weight: 700;
+    color: var(--color_slate_700);
+
+    position: absolute;
+    padding: 14px;
+    left: 1px;
+    top: 37.5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: var(--color_slate_100);
+}
+
+main section form div.term input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 84px;
+
+    font-weight: 700;
+    color: var(--color_slate_700);
+}
+
+main section form div.term span::before {
+    content: 'years';
+    font-weight: 700;
+    color: var(--color_slate_700);
+
+    position: absolute;
+    padding: 14px;
+    right: 1px;
+    top: 37.5px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: var(--color_slate_100);
+}
+
+main section form div.rate input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 53px;
+    
+    font-weight: 700;
+    color: var(--color_slate_700);
+}
+
+main section form div.rate span::before {
+    content: '%';
+    font-weight: 700;
+    color: var(--color_slate_700);
+
+    position: absolute;
+    padding: 14px;
+    right: 1px;
+    top: 37.5px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: var(--color_slate_100);
+}
+
+main section form div.type label {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+main section form div.type label input {
+    appearance: none;
+    width: 8px;
+    height: 8px;
+    outline: 2px solid var(--color_lime);
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+main section form div.type label input:checked {
+    background-color: var(--color_slate_900);
+}
+
+main section form div.amount input:hover,
+main section form div.term input:hover,
+main section form div.rate input:hover {
+    border-color: var(--color_slate_900);
+    border-width: 1.5px;
+}
+
+main section form div.amount input:focus,
+main section form div.term input:focus,
+main section form div.rate input:focus {
+    border-color: var(--color_lime);
+}
+
+main section form div.amount input:focus + span::before,
+main section form div.term input:focus + span::before,
+main section form div.rate input:focus + span::before {
+    background-color: var(--color_lime);
+}
+
+main section form div.type label:hover {
+    background-color: hsl(61, 70%, 90%);
+}
+
+main section form button#submit {
+    padding: 16px;
+    border-radius: 30px;
+    background-color: var(--color_lime);
+    border: none;
+
+    font-weight: 700;
+    color: var(--color_slate_900);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+
+    cursor: pointer;
+}
+
+main section form div p.error {
+    margin-top: 16px;
+
+    color: red;
+    font-size: 13px;
+}
+
+main section form div p.error.hidden {
+    display: none;
+}
+
+main section form div.invalid span::before {
+    background-color: red;
+}
+
+section.result {
+    background-color: var(--color_slate_900);
+}
+
+section.result div.pre-calculating, section.result div.after-calculating {
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 16px;
+}
+
+section.result div.pre-calculating {
+    align-items: center;
+}
+
+section.result div p.notice {
+    color: var(--color_white);
+    font-weight: 700;
+    font-size: 22px;
+}
+
+section.result div p.guide {
+    color: var(--color_slate_500);
+    font-weight: 500;
+}
+
+section.result div.pre-calculating p.guide {
+    text-align: center;
+}
+
+section.result div.after-calculating div.result-container {
+    height: fit-content;
+    background-color: var(--color_lime);
+    border-radius: 5px;
+}
+
+section.result div.after-calculating div.result-container div.result {
+    margin-top: 10px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    background-color: hsl(202, 55%, 10%);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+section.result div.after-calculating div.result-container div.result p {
+    color: var(--color_slate_500);
+    font-weight: 500;
+}
+
+section.result div.after-calculating div.result-container div.result p.monthly-repayment {
+    color: var(--color_lime);
+    font-size: 30px;
+}
+
+section.result div.after-calculating div.result-container div.result p.over-term-repayment {
+    color: var(--color_white);
+    font-size: 22px;
+}
+
+section.result > div[class*='hidden'] {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    /* body {
+        display: flex;
+        justify-content: space-between;
+        height: 120vh;
+    } */
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    main {
+        width: 50%;
+    }
+
+    main header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    main section form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    main section form div.amount {
+        width: 100%;
+    }
+
+    main section form div.term,
+    main section form div.rate {
+        width: 48%;
+    }
+
+    main section form div.type {
+        width: 100%;
+    }
+
+    main section form button#submit {
+        width: 75%;
+    }
+
+    section.result {
+        width: 50%;
+        border-bottom-left-radius: 50px;
+        position: relative;
+    }
+
+    section.result div.pre-calculating, section.result div.after-calculating {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}

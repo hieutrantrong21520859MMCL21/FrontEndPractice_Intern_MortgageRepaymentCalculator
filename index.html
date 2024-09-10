@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <main>
+  
+      <header>
+  
+        <p class="title"> Mortgage Calculator </p>
+        <p class="clear"> Clear All </p>
+  
+      </header>
+  
+      <section>
+  
+        <form action="">
+  
+          <div class="amount">
+  
+            <label for="amount"> Mortgage Amount </label>
+            <input type="text" name="amount" id="amount">
+            <span></span>
+            <p class="error hidden"> This field is required </p>
+  
+          </div>
+    
+          <div class="term">
+    
+            <label for="term"> Mortgage Term </label>
+            <input type="text" name="term" id="term">
+            <span></span>
+            <p class="error hidden"> This field is required </p>
+    
+          </div>
+  
+          <div class="rate">
+    
+            <label for="rate"> Mortgage Rate </label>
+            <input type="text" name="rate" id="rate">
+            <span></span>
+            <p class="error hidden"> This field is required </p>
+    
+          </div>
+  
+          <div class="type">
+  
+            <p> Mortgage Type </p>
+  
+            <label for="repayment">
+  
+              <input type="radio" name="type" id="repayment">
+              Repayment
+  
+            </label>
+  
+            <label for="interest">
+  
+              <input type="radio" name="type" id="interest">
+              Interest Only
+  
+            </label>
+  
+            <p class="error hidden"> This field is required </p>
+  
+          </div>
+  
+          <button type="submit" id="submit">
+  
+            <embed src="./assets/images/icon-calculator.svg" type="">
+              Calculate Repayments
+  
+          </button>
+  
+        </form>
+  
+      </section>
+  
+    </main>
+  
+    <section class="result">
+  
+      <div class="pre-calculating">
+  
+        <img src="./assets/images/illustration-empty.svg" alt="decorating image">
+        <p class="notice"> Results shown here </p>
+        <p class="guide">
+          Complete the form and click “calculate repayments” to see what 
+          your monthly repayments would be.
+        </p>
+  
+      </div>
+  
+      <div class="after-calculating hidden">
+  
+        <p class="notice"> Your results </p>
+        <p class="guide">
+          Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.
+        </p>
+  
+        <div class="result-container">
+  
+          <div class="result">
+  
+            <p> Your monthly repayments </p>
+  
+            <p class="monthly-repayment">
+              £<span id="monthly-repayment"></span>
+            </p>
+  
+            <hr>
+  
+            <p> Total you'll repay over the term </p>
+  
+            <p class="over-term-repayment">
+  
+              £<span id="over-term-repayment"></span>
+  
+            </p>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </section>
+
+  </div>
+
+  
+  <script src="app.js"></script>
+</body>
+</html>
